@@ -1,28 +1,26 @@
-// import React, { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+import { Navbar, Sidebar } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const { currentMode, activeMenu, currentColor, setThemeSettings } = useStateContext();
 
-  useEffect(() => {
-    const currentThemeColor = localStorage.getItem('colorMode');
-    const currentThemeMode = localStorage.getItem('themeMode');
-    if (currentThemeColor && currentThemeMode) {
-      setCurrentColor(currentThemeColor);
-      setCurrentMode(currentThemeMode);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const currentThemeColor = localStorage.getItem('colorMode');
+  //   const currentThemeMode = localStorage.getItem('themeMode');
+  //   if (currentThemeColor && currentThemeMode) {
+  //     setCurrentColor(currentThemeColor);
+  //     setCurrentMode(currentThemeMode);
+  //   }
+  // }, []);
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -64,7 +62,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-              {themeSettings && (<ThemeSettings />)}
+              {/* {themeSettings && (<ThemeSettings />)} */}
 
               <Routes>
                 {/* dashboard  */}
@@ -94,7 +92,7 @@ const App = () => {
 
               </Routes>
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </BrowserRouter>

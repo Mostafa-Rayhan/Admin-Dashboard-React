@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-// import { useStateContext } from './StateContext';
 
 const StateContext = createContext();
 
