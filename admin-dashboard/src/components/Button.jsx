@@ -13,7 +13,7 @@ const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, 
     >
       {icon} {text}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
